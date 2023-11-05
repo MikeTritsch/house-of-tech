@@ -1,0 +1,25 @@
+body {
+  background-color: mintcream;
+}
+
+header {
+  background-color: gray;
+  padding: 10px;
+}
+
+.title {
+  color: mintcream;
+  border: 2px solid mintcream;
+  padding: 10px;
+  width: 20%;
+  border-radius: 10px;
+  box-shadow: 4px 4px black;
+}
+
+.nav-link {
+  color: mintcream;
+}
+
+.navbar-brand {
+  color: mintcream;
+}
