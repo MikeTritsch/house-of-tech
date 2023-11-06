@@ -3,17 +3,10 @@ const { Post } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all galleries for homepage
+// GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbPostData = await Post.findAll({
-      include: [
-        {
-          model: Post,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+    res.render('main');
 
     const galleries = dbGalleryData.map((gallery) =>
       gallery.get({ plain: true })

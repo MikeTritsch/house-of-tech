@@ -1,5 +1,9 @@
+:root {
+  --background-main: rgb(206, 247, 226);
+}
+
 body {
-  background-color: mintcream;
+  background-color: var(--background-main);
 }
 
 header {
@@ -8,8 +12,8 @@ header {
 }
 
 .title {
-  color: mintcream;
-  border: 2px solid mintcream;
+  color: var(--background-main);
+  border: 2px solid var(--background-main);
   padding: 10px;
   width: 20%;
   border-radius: 10px;
@@ -17,9 +21,23 @@ header {
 }
 
 .nav-link {
-  color: mintcream;
+  color: var(--background-main);
 }
 
 .navbar-brand {
-  color: mintcream;
+  color: var(--background-main);
+}
+
+.form-floating {
+  padding: 10px;
+}
+
+.post-title {
+  padding: 10px;
+}
+
+.post-submit-btn {
+  background-color: gray;
+  color: var(--background-main);
+  margin: 10px;
 }
