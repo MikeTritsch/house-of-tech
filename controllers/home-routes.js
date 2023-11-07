@@ -6,16 +6,7 @@ const withAuth = require('../utils/auth');
 // GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('main');
-
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
-
-    res.render('homepage', {
-      galleries,
-      loggedIn: req.session.loggedIn,
-    });
+    res.render('all-posts');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
