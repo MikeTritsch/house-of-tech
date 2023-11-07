@@ -8,6 +8,7 @@ Comment.init(
     comment_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
       autoIncrement: true,
     },
     comment_body: {
@@ -27,7 +28,7 @@ Comment.init(
       allowNull: false,
       references: {
         model: 'post',
-        key: 'user_id',
+        key: 'author_id',
       },
     },
   },
