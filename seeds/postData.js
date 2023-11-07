@@ -2,7 +2,7 @@ const { Post } = require('../models');
 
 const postData = [
   {
-    topic: "Hello world!",
+    topic: "Hello world",
     post_body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim sapien at nisi laoreet pulvinar. Maecenas laoreet turpis ac efficitur volutpat. Fusce mattis vestibulum cursus. Donec dapibus tellus at augue convallis ornare. Cras tincidunt molestie efficitur. Morbi malesuada lacus id dictum lobortis. Aliquam sodales tellus feugiat nunc tempor faucibus. Donec sodales dui in lacus lacinia, ut faucibus nulla tristique. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer finibus urna in felis tempor lobortis. Donec et metus ut dui lobortis malesuada id quis sem. Duis ac nisi ac sem porttitor ornare id tempor sapien. Pellentesque nisi augue, congue nec semper vel, luctus quis lectus.",
     author_id: 1,
     date: "1/1/23"
@@ -22,5 +22,28 @@ const postData = [
 ];
 
 const seedPost = () => Post.bulkCreate(postData);
+
+// const seedPost = async () => {
+//   try {
+//     // Establish the database connection before using the model
+//     await sequelize.authenticate();
+//     console.log('Database connection has been established successfully.');
+
+//     // Synchronize the model with the database (or use migrations)
+//     await sequelize.sync();
+
+//     // Use the Post model to bulkCreate
+//     await Post.bulkCreate(postData);
+    
+//     console.log('Data has been successfully inserted.');
+//   } catch (error) {
+//     console.error('Error:', error);
+//   } finally {
+//     // Close the database connection
+//     await sequelize.close();
+//   }
+// };
+
+// seedPost();
 
 module.exports = seedPost;
