@@ -1,15 +1,15 @@
 const router = require('express').Router();
+const { Post, User } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-    const postData = [{
-      title: 'Test',
-      text: 'Hello world!'
-    },
-    {
-      title: 'Test 2',
-      text: 'Hello world!!!!'
-    }]
+    const postData = await Post.findAll({
+      where:{'user_id': req.session.user_id},
+      include: [User]
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
 
     // const postDataSerial = postData.map((post) => {
     //   return post.get({ plain: true })
@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
 
     res.render('all-posts-admin', {
       layout: 'dashboard',
-      postData
+      posts
     });
   } catch (err) {
-    console.log(err);
+    res.redirect('login');
     res.status(500).json(err);
   }
 });

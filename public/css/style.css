@@ -53,3 +53,21 @@ header {
 .card a {
   color: var(--background-main);
 }
+
+.btn {
+  margin: 10px;
+  background-color: gray;
+  border: black 2px solid;
+  color: var(--background-main);
+  box-shadow: 4px 4px black;
+}
+
+.btn:hover {
+  background-color: black;
+  color: var(--background-main);
+}
+
+.signUp-form {
+  margin: 10px;
+  width: 30rem;
+}
