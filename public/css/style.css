@@ -41,3 +41,15 @@ header {
   color: var(--background-main);
   margin: 10px;
 }
+
+.card {
+  margin: 10px;
+  border: 2px solid var(--background-main);
+  box-shadow: 4px 4px black;
+  background-color: gray;
+  color: white;
+}
+
+.card a {
+  color: var(--background-main);
+}

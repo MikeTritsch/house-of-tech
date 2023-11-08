@@ -1,1 +1,16 @@
-<h1>Hello world!</h1>
+{{#each posts as |post| }}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 30rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{post.topic}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{post.date}}</h6>
+            <a href="#" class="card-link">Read more...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
