@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { authPlugins } = require('mysql2');
-const { Post } = require('../models');
-const withAuth = require('../utils/auth');
+const { Post } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 router.get('/', async (req, res) => {

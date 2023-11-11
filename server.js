@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const secret = {
+const sess = {
   secret: "Shh quiet!",
   cookie: {
     maxAge: 300000,
@@ -26,14 +26,17 @@ const secret = {
   })
 };
 
-app.use(session(secret));
+app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
