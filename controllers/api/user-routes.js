@@ -28,8 +28,8 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({
       where: {
         username: req.body.username,
-      },
-    });
+      }
+    })
 
     if (!user) {
       res
@@ -38,23 +38,22 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await user.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
     req.session.save(() => {
-      req.session.user_id = user.id;
       req.session.username = user.username;
       req.session.loggedIn = true;
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: user, message: 'You are now logged in!' });
 
     });
   } catch (err) {
