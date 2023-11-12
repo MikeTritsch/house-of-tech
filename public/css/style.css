@@ -4,6 +4,7 @@
 
 body {
   background-color: var(--background-main);
+  position: relative;
 }
 
 header {
@@ -12,12 +13,19 @@ header {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  text-wrap: wrap;
   color: var(--background-main);
   border: 2px solid var(--background-main);
   padding: 10px;
   width: 20%;
   border-radius: 10px;
   box-shadow: 4px 4px black;
+}
+
+.blogName {
+  display: flex;
 }
 
 .nav-link {
@@ -70,4 +78,29 @@ header {
 .signUp-form {
   margin: 10px;
   width: 30rem;
+}
+
+.login-form {
+  margin: 10px;
+  width: 30rem;
+}
+
+.newPostBtn {
+  margin: 10px;
+  background-color: gray;
+  border: black 2px solid;
+  color: var(--background-main);
+  box-shadow: 4px 4px black;
+  position: relative;
+}
+
+.newPostBtn:hover {
+  background-color: black;
+  color: var(--background-main);
+}
+
+.newPost {
+  position: absolute;
+  bottom: -45rem;
+  right: 50%;
 }

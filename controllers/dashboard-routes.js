@@ -4,8 +4,9 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
+    console.log('author_id:', req.session.author_id)
     const postData = await Post.findAll({
-      where:{'user_id': req.session.user_id},
+      where:{'user_id': req.session.author_id},
       include: [User]
     });
 
@@ -20,8 +21,11 @@ router.get('/', withAuth, async (req, res) => {
       posts
     });
   } catch (err) {
-    res.redirect('login');
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500).render('login', {
+      layout: 'main', // Assuming 'main' is your default layout
+      message: 'An error occurred while fetching your posts. Please try again later.'
+    });
   }
 });
 
