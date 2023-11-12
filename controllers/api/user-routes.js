@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.user_id = newUser.id;
+      req.session.user_id = newUser.user_id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
 
@@ -32,31 +32,25 @@ router.post('/login', async (req, res) => {
     })
 
     if (!user) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+      res.status(400).json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
     const validPassword = await user.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+      res.status(400).json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
     req.session.save(() => {
-      console.log('Session saved!')
+      req.session.user_id = user.user_id;
       req.session.username = user.username;
       req.session.loggedIn = true;
 
-      res
-        .status(200).json({ user: user, message: 'You are now logged in!' });
-        console.log('You are logged in!')
-
+      res.status(200).json({ user, message: 'You are now logged in!' });
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
