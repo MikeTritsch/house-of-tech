@@ -48,12 +48,13 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      console.log('Session saved!')
       req.session.username = user.username;
       req.session.loggedIn = true;
 
       res
-        .status(200)
-        .json({ user: user, message: 'You are now logged in!' });
+        .status(200).json({ user: user, message: 'You are now logged in!' });
+        console.log('You are logged in!')
 
     });
   } catch (err) {

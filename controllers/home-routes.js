@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
     res.render('all-posts', {
       posts,
-      logged_in: req.session.logged_in
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     console.log(err);
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 router.get('/signup', async (req, res) => {
   try {
     res.render('signup', {
-      logged_in: req.session.logged_in
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     console.log(err);
@@ -41,7 +41,7 @@ router.get('/signup', async (req, res) => {
 router.get('/login', async (req, res) => {
   try {
     res.render('login', {
-      logged_in: req.session.logged_in
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     console.log(err);
