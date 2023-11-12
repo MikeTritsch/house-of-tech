@@ -13,9 +13,6 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    // const postDataSerial = postData.map((post) => {
-    //   return post.get({ plain: true })
-    // });
 
     res.render('all-posts-admin', {
       layout: 'dashboard',
@@ -25,6 +22,12 @@ router.get('/', withAuth, async (req, res) => {
     console.log(err);
     res.redirect('login');
     }
+});
+
+router.get('/new', withAuth, (req, res) => {
+  res.render('new-post', {
+    layout: 'dashboard',
+  });
 });
 
 module.exports = router;
