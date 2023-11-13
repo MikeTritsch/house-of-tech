@@ -104,3 +104,15 @@ header {
   bottom: -45rem;
   right: 50%;
 }
+
+.container {
+  margin: 10px;
+}
+
+.card-body h6 {
+  color: white;
+}
+
+.card-body h4 {
+  color: var(--background-main);
+}

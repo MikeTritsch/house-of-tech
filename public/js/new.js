@@ -13,6 +13,8 @@ const newPostHandler = async function(event) {
     }),
     headers: { 'Content-Type': 'application/json'},
   });
+
+  document.location.replace('/dashboard');
 };
 
 document.querySelector('.newPostForm').addEventListener('submit', newPostHandler);
