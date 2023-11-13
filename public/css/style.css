@@ -116,3 +116,13 @@ header {
 .card-body h4 {
   color: var(--background-main);
 }
+
+.post-link:hover {
+  cursor: pointer;
+  text-decoration: underline; 
+  /* Just so I know I'm not crazy */
+}
+
+.post-link {
+  text-decoration: none;
+}
