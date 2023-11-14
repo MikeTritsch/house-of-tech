@@ -27,24 +27,27 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/signup', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    res.render('signup', {
-      loggedIn: req.session.loggedIn
+    const postData = await Post.findOne({
+      where: { post_id: req.params.post_id },
+      include: [
+        User,
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
     });
+  
+    if (postData) {
+      const post = postData.get({ plain: true });
+      res.render('single-post', 
+      { post, loggedIn: req.session.loggedIn })
+    } else {
+      res.status(404).end();
+    }
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/login', async (req, res) => {
-  try {
-    res.render('login', {
-      loggedIn: req.session.loggedIn
-    });
-  } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -100,5 +103,27 @@ router.get('/login', async (req, res) => {
 
 //   res.render('login');
 // });
+
+router.get('/signup', async (req, res) => {
+  try {
+    res.render('signup', {
+      loggedIn: req.session.loggedIn
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login', {
+      loggedIn: req.session.loggedIn
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
