@@ -51,7 +51,7 @@ header {
 }
 
 .card {
-  margin: 10px;
+  margin: 20px;
   border: 2px solid var(--background-main);
   box-shadow: 4px 4px black;
   background-color: gray;
@@ -110,7 +110,10 @@ header {
 }
 
 .card-body h6 {
-  color: white;
+  color: black;
+  background-color: var(--background-main);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .card-body h4 {
@@ -119,10 +122,12 @@ header {
 
 .post-link:hover {
   cursor: pointer;
-  text-decoration: underline; 
-  /* Just so I know I'm not crazy */
 }
 
 .post-link {
   text-decoration: none;
+}
+
+.single-post-card {
+  width: 100%;
 }
