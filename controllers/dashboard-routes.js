@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -29,5 +29,31 @@ router.get('/new', withAuth, (req, res) => {
     layout: 'dashboard',
   });
 });
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findOne({
+      where: { post_id: req.params.id },
+      include: [
+        User,
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('edit-post', {
+      layout: 'dashboard',
+      post
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;

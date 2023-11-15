@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
+  console.log('Hello');
   try {
     const postData = await Post.findAll({
       include: [
@@ -33,10 +34,10 @@ router.get('/post/:post_id', withAuth, async (req, res) => {
       where: { post_id: req.params.post_id },
       include: [
         User,
-        // {
-        //   model: Comment,
-        //   include: [User],
-        // },
+        {
+          model: Comment,
+          include: [User],
+        },
       ],
     });
     console.log(postData);
