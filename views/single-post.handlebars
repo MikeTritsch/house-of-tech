@@ -20,15 +20,17 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Add a comment...</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <div class="comment-title">
-              <label for="TextInput" class="form-label"></label>
-              <input type="text" id="TextInput" class="newPostTitle form-control" placeholder="Add your thoughts...">
+          <form class="commentForm">
+            <div class="modal-body">
+              <div class="comment-title">
+                <label for="TextInput" class="form-label"></label>
+                <input type="text" id="TextInput" class="newComment form-control" placeholder="Add your thoughts...">
+              </div>
             </div>
-          </div>
-          <div id="comment-submit" class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Comment</button>
-          </div>
+            <div id="comment-submit" class="modal-footer">
+              <button type="submit" class="btn btn-secondary">Comment</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -40,3 +42,4 @@
       {{/each}}
     </ul>
   </div>
+  <script src="/js/comment.js"></script>
