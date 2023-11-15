@@ -100,9 +100,7 @@ header {
 }
 
 .newPost {
-  position: absolute;
-  bottom: -45rem;
-  right: 50%;
+  position: relative;
 }
 
 .container {
@@ -130,4 +128,9 @@ header {
 
 .single-post-card {
   width: 100%;
+}
+
+.comment-card {
+  padding: 10px;
+  margin: 40px;
 }

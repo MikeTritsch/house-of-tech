@@ -2,9 +2,11 @@
   <div class="container">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">{{post.topic}}</h4>
-          <h5 class="card-subtitle mb-2 text-body-secondary">{{post.date}}</h5>
-          <h6 class="postBody card-subtitle mb-2">{{post.post_body}}</h6>
+          <a class="post-link" href="/post/{{post.post_id}}">
+            <h4 class="card-title">{{post.topic}}</h4>
+            <h5 class="card-subtitle mb-2 text-body-secondary">{{post.date}}</h5>
+            <p class="card-text">{{post.post_body}}</p>
+          </a>
         </div>
       </div>
     </div>
