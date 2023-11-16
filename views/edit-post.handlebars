@@ -1,3 +1,17 @@
-<h1>EDIT POST</h1>
-{{post.topic}}
-{{post.post_body}}
+  <form class="editPostForm">
+    <fieldset>
+      <div class="post-title mb-3">
+        <label for="TextInput" class="form-label"></label>
+        <input type="text" id="TextInput" class="newPostTitle form-control" value="{{post.topic}}">
+      </div>
+      <div class="mb-3">
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control newBody" placeholder="Write your thoughts here..." id="floatingTextarea2" style="height: 100px">{{post.post_body}}</textarea>
+        <label for="floatingTextarea2">Content</label>
+      </div>
+      <button type="submit" class="save-edit-btn btn">Save Edits</button>
+      <button type="button" class="post-delete-btn btn">Delete Post</button>
+    </fieldset>
+  </form>
+  <script src="/js/edit.js"></script>

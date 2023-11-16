@@ -37,8 +37,12 @@
     <div class="comment-card card">
     <h6 class="commentTitle">Comments</h6>
     <ul class="list-group list-group-flush">
-      {{#each comments as |comment|}}
-      <li class="list-group-item">{{post.comment_body}}</li>
+      {{#each post.comments as |comment|}}
+      <li class="list-group-item">
+        <h6 class="comment-username">User: {{user.username}}</h6>
+        <h6 class="comment-datw">On: {{comment.date}}</h6>
+        <p>{{comment.comment_body}}</p>
+      </li>
       {{/each}}
     </ul>
   </div>

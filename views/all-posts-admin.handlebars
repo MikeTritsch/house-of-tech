@@ -1,12 +1,22 @@
 {{#each posts as |post| }}
   <div class="postContainer container">
       <div class="card">
-        <div class="card-body">
-          <a class="post-link" href="/post/{{post.post_id}}">
-            <h4 class="card-title">{{post.topic}}</h4>
-            <h5 class="card-subtitle mb-2 text-body">{{post.date}}</h5>
+        <div class="col">
+          <a href="/dashboard/edit/{{post.post_id}}">
+            <button type="button" class="btn btn-secondary edit-post-btn" href="dashboard/edit/{{post.post_id}}">Edit Post</button>
           </a>
         </div>
+          <div class="card-body">
+            <a class="post-link" href="/post/{{post.post_id}}">
+              <h4 class="card-title">{{post.topic}}</h4>
+              <h5 class="card-subtitle mb-2 text-body">{{post.date}}</h5>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 {{/each}}
+  <div class="newPost">
+    <a href="/dashboard/new">
+      <button href="/dashboard/new" type="button" class="newPostBtn">New Post +</button>
+    </a>
+  </div>
