@@ -16,12 +16,10 @@ const editPostHandler = async function(event) {
     }
   });
 
-
-
   console.log(response);
   
   if (response.ok) {
-    window.location.href = '/dashboard';
+    document.location.replace('/dashboard');
     console.log('Post successfully updated!')
   } else {
     console.error('Error during fetch:', error);
@@ -31,4 +29,17 @@ const editPostHandler = async function(event) {
   document.location.replace('/dashboard');
 };
 
+const deletePostHandler = async function(event) {
+  event.preventDefault();
+
+  const post_id = window.location.pathname.split('/').pop();
+
+  await fetch(`/api/post/${post_id}`, {
+    method: 'DELETE',
+  });
+
+  document.location.replace('/dashboard');
+}
+
 document.querySelector('.save-edit-btn').addEventListener('click', editPostHandler);
+document.querySelector('.post-delete-btn').addEventListener('click', deletePostHandler);
