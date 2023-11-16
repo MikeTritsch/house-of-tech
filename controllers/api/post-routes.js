@@ -28,7 +28,8 @@ router.post('/', withAuth, async (req, res) => {
             post_id: req.params.id,
           }
         }
-      )
+      ) 
+      res.json({ message: 'Post updated!' })
     } catch (err) {
       res.status(500).json(err);
     }

@@ -16,10 +16,12 @@ const editPostHandler = async function(event) {
     }
   });
 
+
+
   console.log(response);
   
   if (response.ok) {
-    document.location.replace('/dashboard');
+    window.location.href = '/dashboard';
     console.log('Post successfully updated!')
   } else {
     console.error('Error during fetch:', error);
