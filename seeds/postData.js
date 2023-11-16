@@ -23,27 +23,4 @@ const postData = [
 
 const seedPost = () => Post.bulkCreate(postData);
 
-// const seedPost = async () => {
-//   try {
-//     // Establish the database connection before using the model
-//     await sequelize.authenticate();
-//     console.log('Database connection has been established successfully.');
-
-//     // Synchronize the model with the database (or use migrations)
-//     await sequelize.sync();
-
-//     // Use the Post model to bulkCreate
-//     await Post.bulkCreate(postData);
-    
-//     console.log('Data has been successfully inserted.');
-//   } catch (error) {
-//     console.error('Error:', error);
-//   } finally {
-//     // Close the database connection
-//     await sequelize.close();
-//   }
-// };
-
-// seedPost();
-
 module.exports = seedPost;

@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // console.log('userId:', req.session.userId)
     const postData = await Post.findAll({
       where: {
         author_id: req.session.user_id,

@@ -5,7 +5,6 @@ const withAuth = require('../utils/auth');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
-  console.log('Hello');
   try {
     const postData = await Post.findAll({
       include: [
@@ -40,7 +39,6 @@ router.get('/post/:post_id', withAuth, async (req, res) => {
         },
       ],
     });
-    console.log(postData);
   
     if (postData) {
       const post = postData.get({ plain: true });
