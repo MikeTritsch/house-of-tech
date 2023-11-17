@@ -34,7 +34,7 @@ Welcome to the House of Tech! A user friendy interactive experience where music 
 
 ## What comes next? and other issues...
 
-I had a blast builing this application. Sure, it had it's frustrating and repetitive moments, but overall, I walk away from this a better developer. This application included everything I've learned so far, and I feel like I was able to grasp concepts I previously struggled with faily well.
+I had a blast builing this application. Sure, it had its frustrating and repetitive moments, but overall, I walk away from this a better developer. This application included everything I've learned so far, and I feel like I was able to grasp concepts I previously struggled with faily well.
 
 I'd like to add more error handling moving forward. As I was debugging, I found myself saying "man, I wish there was something that could tell me what's wrong" more times than not. 
 
