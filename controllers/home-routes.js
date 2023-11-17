@@ -1,9 +1,9 @@
+// Imports
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
-// Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all posts for homepage
+// Get all posts for homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Renders single post view
 router.get('/post/:post_id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findOne({
@@ -52,7 +53,7 @@ router.get('/post/:post_id', withAuth, async (req, res) => {
   }
 });
 
-
+// Renders sign-up view
 router.get('/signup', async (req, res) => {
   try {
     res.render('signup', {
@@ -64,6 +65,7 @@ router.get('/signup', async (req, res) => {
   }
 });
 
+// Renders login view
 router.get('/login', async (req, res) => {
   try {
     res.render('login', {

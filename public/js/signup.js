@@ -1,3 +1,4 @@
+// Sign-up functionality
 const signUpFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,4 +20,5 @@ const signUpFormHandler = async (event) => {
   }
 };
 
+// Event listener
 document.querySelector('.signUp-form').addEventListener('submit', signUpFormHandler);

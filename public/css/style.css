@@ -1,7 +1,9 @@
+/* VARIABLES */
 :root {
   --background-main: rgb(206, 247, 226);
 }
 
+/* LAYOUTS */
 body {
   background-color: var(--background-main);
   position: relative;
@@ -10,6 +12,14 @@ body {
 header {
   background-color: gray;
   padding: 10px;
+}
+
+.nav-link {
+  color: var(--background-main);
+}
+
+.navbar-brand {
+  color: var(--background-main);
 }
 
 .title {
@@ -27,14 +37,7 @@ header {
   display: flex;
 }
 
-.nav-link {
-  color: var(--background-main);
-}
-
-.navbar-brand {
-  color: var(--background-main);
-}
-
+/* EDIT POST / NEW POST */
 .form-floating {
   padding: 10px;
 }
@@ -49,6 +52,7 @@ header {
   margin: 10px;
 }
 
+/* ALL POSTS */
 .card {
   margin: 20px;
   border: 2px solid var(--background-main);
@@ -59,59 +63,6 @@ header {
 
 .card a {
   color: var(--background-main);
-}
-
-.btn {
-  margin: 10px;
-  background-color: gray;
-  border: black 2px solid;
-  color: var(--background-main);
-  box-shadow: 4px 4px black;
-}
-
-.comment-btn {
-  margin: 10px;
-  margin-left: 40px;
-  background-color: gray;
-  border: black 2px solid;
-  color: var(--background-main);
-  box-shadow: 4px 4px black;
-}
-
-
-
-.btn:hover {
-  background-color: black;
-  color: var(--background-main);
-}
-
-.signUp-form {
-  margin: 10px;
-  width: 30rem;
-}
-
-.login-form {
-  margin: 10px;
-  width: 30rem;
-}
-
-.newPostBtn {
-  margin: 10px;
-  background-color: gray;
-  border: black 2px solid;
-  color: var(--background-main);
-  box-shadow: 4px 4px black;
-  position: relative;
-}
-
-.newPostBtn:hover {
-  background-color: black;
-  color: var(--background-main);
-}
-
-.newPost {
-  position: relative;
-  left: 35px;
 }
 
 .container {
@@ -135,6 +86,30 @@ header {
 
 .post-link {
   text-decoration: none;
+}
+
+/* BOOTSTRAP BUTTON EDITS */
+.btn {
+  margin: 10px;
+  background-color: gray;
+  border: black 2px solid;
+  color: var(--background-main);
+  box-shadow: 4px 4px black;
+}
+
+/* SINGLE POST/COMMENTS */
+.comment-btn {
+  margin: 10px;
+  margin-left: 40px;
+  background-color: gray;
+  border: black 2px solid;
+  color: var(--background-main);
+  box-shadow: 4px 4px black;
+}
+
+.btn:hover {
+  background-color: black;
+  color: var(--background-main);
 }
 
 .single-post-card {
@@ -168,6 +143,40 @@ header {
   padding: 10px;
 }
 
+/* SIGN UP VIEW */
+.signUp-form {
+  margin: 10px;
+  width: 30rem;
+}
+
+/* LOG IN VIEW */
+.login-form {
+  margin: 10px;
+  width: 30rem;
+}
+
+/* DASHBOARD NEW POST */
+.newPostBtn {
+  margin: 10px;
+  background-color: gray;
+  border: black 2px solid;
+  color: var(--background-main);
+  box-shadow: 4px 4px black;
+  position: relative;
+}
+
+.newPostBtn:hover {
+  background-color: black;
+  color: var(--background-main);
+}
+
+/* NEW POST VIEW */
+.newPost {
+  position: relative;
+  left: 35px;
+}
+
+/* MEDIA QUERY */
 @media screen and (max-width: 576px) {
   .title {
     font-size: 10px;

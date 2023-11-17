@@ -1,7 +1,8 @@
+// Imports
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
+// Creates a new user
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({

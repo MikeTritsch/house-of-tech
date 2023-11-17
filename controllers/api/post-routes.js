@@ -1,8 +1,9 @@
+// Imports
 const router = require('express').Router();
-const { authPlugins } = require('mysql2');
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Create a new post
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
 
@@ -16,8 +17,8 @@ router.post('/', withAuth, async (req, res) => {
   }
   });
 
+  // Update existing post by post ID
   router.put('/:id', withAuth, async (req, res) => {
-    // Add back in withAuth
     const body = req.body;
     console.log(body);
     try {
@@ -35,6 +36,7 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  // Delete existing post
   router.delete('/:id', withAuth, async (req, res) => {
     try {
       const postData = await Post.destroy({

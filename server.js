@@ -1,3 +1,4 @@
+// Imports
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -6,11 +7,13 @@ const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./controllers');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/config');
 
+// Session storage
 const sess = {
   secret: "Shh quiet!",
   cookie: {
@@ -28,6 +31,7 @@ const sess = {
 
 app.use(session(sess));
 
+// Handlebars initialization
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
@@ -39,6 +43,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
+// Let's go!
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

@@ -1,3 +1,4 @@
+// Sample posts
 const { Post } = require('../models');
 
 const postData = [

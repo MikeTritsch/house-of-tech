@@ -1,3 +1,4 @@
+// Master seed connections
 const sequelize = require('../config/config.js');
 const seedPost = require('./postData.js');
 const seedUser = require('./userData.js');

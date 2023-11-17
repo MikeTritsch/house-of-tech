@@ -1,3 +1,4 @@
+// New post functionality
 const newPostHandler = async function(event) {
   event.preventDefault(0);
 
@@ -17,4 +18,5 @@ const newPostHandler = async function(event) {
   document.location.replace('/dashboard');
 };
 
+// Event listener
 document.querySelector('.newPostForm').addEventListener('submit', newPostHandler);
