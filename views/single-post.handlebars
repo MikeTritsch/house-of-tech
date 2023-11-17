@@ -18,7 +18,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Add a comment...</h1>
+            <h6 class="modal-title fs-5" id="exampleModalLabel">Add a comment...</h6>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form class="commentForm">
@@ -35,16 +35,18 @@
         </div>
       </div>
     </div>
-    <div class="comment-card card">
-    <h6 class="commentTitle">Comments</h6>
-    <ul class="list-group list-group-flush">
-      {{#each post.comments as |comment|}}
-      <li class="list-group-item">
-        <h6 class="comment-username">User: {{user.username}}</h6>
-        <h6 class="comment-date">On: {{comment.date}}</h6>
-        <p class="comment-body-text">{{comment.comment_body}}</p>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-  <script src="/js/comment.js"></script>
+    <section>
+      <div class="comment-card card">
+        <h6 class="commentTitle">Comments</h6>
+        <ul class="list-group list-group-flush">
+        {{#each post.comments as |comment|}}
+          <li class="list-group-item">
+            <h6 class="comment-username">User: {{user.username}}</h6>
+            <h6 class="comment-date">On: {{comment.date}}</h6>
+            <p class="comment-body-text">{{comment.comment_body}}</p>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    </section>
+    <script src="/js/comment.js"></script>
